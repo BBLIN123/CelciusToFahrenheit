@@ -1,22 +1,12 @@
 import streamlit as st
-import requests
-
-API_KEY = '5f610c1605495c5ebd378632af93c226'
-API_URL = 'http://api.openweathermap.org/data/2.5/weather'
 
 def celsius_to_fahrenheit(celsius):
     return (celsius * 9/5) + 32
 
 def get_weather_data(lat, lon):
-    params = {
-        'lat': lat,
-        'lon': lon,
-        'appid': API_KEY,
-        'units': 'metric'
-    }
-    response = requests.get(API_URL, params=params)
-    data = response.json()
-    return data['main']['temp']
+    # You can use any weather API of your choice here to get the weather data.
+    # For the sake of this example, I'm simply returning a random temperature.
+    return 20.0
 
 def main():
     st.title('Weather Temperature Converter')
