@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-API_KEY = 'YOUR_API_KEY'
+API_KEY = '5f610c1605495c5ebd378632af93c226'
 API_URL = 'http://api.openweathermap.org/data/2.5/weather'
 
 def celsius_to_fahrenheit(celsius):
