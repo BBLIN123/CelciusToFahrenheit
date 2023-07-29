@@ -88,7 +88,7 @@ def main():
             "Progress": st.column_config.ProgressColumn(
                 "Work in Progress",
                 help="The sales volume in USD",
-                format="%f%",
+                format="%f\%",
                 min_value=0,
                 max_value=100,
             ),
