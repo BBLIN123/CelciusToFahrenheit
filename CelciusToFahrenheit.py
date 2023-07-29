@@ -11,11 +11,6 @@ def get_weather_data(lat, lon):
     return 20.0
 
 def main():
-    col1, col2, col3 = st.columns(3)
-    col1.metric("Temperature", "70 °F", "1.2 °F")
-    col2.metric("Wind", "9 mph", "-8%")
-    col3.metric("Humidity", "86%", "4%")
-    
     st.title('Weather Temperature Converter')
 
     
@@ -27,6 +22,17 @@ def main():
 
     # Display the result
     st.write(f'{celsius_temp:.2f}°C is equal to {fahrenheit_temp:.2f}°F')
+    
+    
+    
+    
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Temperature", "70 °F", "1.2 °F")
+    col2.metric("Wind", "9 mph", "-8%")
+    col3.metric("Humidity", "86%", "4%")
+    
+    
+    
     
     data_df = pd.DataFrame(
         {
