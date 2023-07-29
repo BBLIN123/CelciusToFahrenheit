@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 def celsius_to_fahrenheit(celsius):
     return (celsius * 9/5) + 32
@@ -30,6 +31,7 @@ def main():
 
     # Display the result
     st.write(f'{celsius_temp:.2f}°C is equal to {fahrenheit_temp:.2f}°F')
+
 
 if __name__ == '__main__':
     main()
