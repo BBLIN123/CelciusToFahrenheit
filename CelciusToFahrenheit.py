@@ -36,8 +36,8 @@ def main():
                radius=50,
                elevation_scale=4,
                elevation_range=[150, 1000],
-               pickable=False,
-               extruded=True,
+               pickable=True,
+               extruded=False,
             ),
             pdk.Layer(
                 'ScatterplotLayer',
