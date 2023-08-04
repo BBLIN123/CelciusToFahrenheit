@@ -15,6 +15,40 @@ def get_weather_data(lat, lon):
 def main():
     st.title('Weather Temperature Converter')
 
+
+    chart_data = pd.DataFrame(
+       np.random.randn(50, 2) / [50, 50] + [-27.634, 152.969],
+       columns=['lat', 'lon'])
+    
+    st.pydeck_chart(pdk.Deck(
+        map_style=None,
+        initial_view_state=pdk.ViewState(
+            latitude=-27.634,
+            longitude=152.969,
+            zoom=11,
+            pitch=50,
+        ),
+        layers=[
+            pdk.Layer(
+               'HexagonLayer',
+               data=chart_data,
+               get_position='[lon, lat]',
+               radius=100,
+               elevation_scale=4,
+               elevation_range=[0, 1500],
+               pickable=True,
+               extruded=True,
+            ),
+            pdk.Layer(
+                'ScatterplotLayer',
+                data=chart_data,
+                get_position='[lon, lat]',
+                get_color='[200, 30, 0, 160]',
+                get_radius=500,
+            ),
+        ],
+        ))
+
     
     # Input Celsius temperature
     celsius_temp = st.number_input('Enter Celsius temperature:', value=0.0)
@@ -126,40 +160,6 @@ def main():
         },
         hide_index=True,
     )
-    
-    
-    chart_data = pd.DataFrame(
-       np.random.randn(50, 2) / [50, 50] + [-27.634, 152.969],
-       columns=['lat', 'lon'])
-    
-    st.pydeck_chart(pdk.Deck(
-        map_style=None,
-        initial_view_state=pdk.ViewState(
-            latitude=-27.634,
-            longitude=152.969,
-            zoom=11,
-            pitch=50,
-        ),
-        layers=[
-            pdk.Layer(
-               'HexagonLayer',
-               data=chart_data,
-               get_position='[lon, lat]',
-               radius=200,
-               elevation_scale=4,
-               elevation_range=[0, 1500],
-               pickable=True,
-               extruded=True,
-            ),
-            pdk.Layer(
-                'ScatterplotLayer',
-                data=chart_data,
-                get_position='[lon, lat]',
-                get_color='[200, 30, 0, 160]',
-                get_radius=100,
-            ),
-        ],
-        ))
     
 
 if __name__ == '__main__':
