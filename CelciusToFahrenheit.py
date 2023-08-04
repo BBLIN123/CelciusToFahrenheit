@@ -21,7 +21,7 @@ def main():
        columns=['lat', 'lon'])
     
     st.pydeck_chart(pdk.Deck(
-        map_style=None,
+        #map_style=None,
         initial_view_state=pdk.ViewState(
             latitude=-27.634,
             longitude=152.969,
