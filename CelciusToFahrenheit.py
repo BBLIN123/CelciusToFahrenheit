@@ -35,7 +35,7 @@ def main():
                get_position='[lon, lat]',
                radius=100,
                elevation_scale=4,
-               elevation_range=[0, 1500],
+               elevation_range=[0, 150],
                pickable=True,
                extruded=True,
             ),
