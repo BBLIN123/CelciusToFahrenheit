@@ -21,7 +21,7 @@ def main():
        columns=['lat', 'lon'])
     
     st.pydeck_chart(pdk.Deck(
-        #map_style=None,
+        map_style=None,
         initial_view_state=pdk.ViewState(
             latitude=-27.634,
             longitude=152.969,
@@ -33,9 +33,9 @@ def main():
                'HexagonLayer',
                data=chart_data,
                get_position='[lon, lat]',
-               radius=100,
+               radius=50,
                elevation_scale=4,
-               elevation_range=[0, 1000],
+               elevation_range=[150, 1000],
                pickable=False,
                extruded=True,
             ),
