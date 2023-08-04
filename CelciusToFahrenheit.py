@@ -34,9 +34,9 @@ def main():
                data=chart_data,
                get_position='[lon, lat]',
                radius=100,
-               elevation_scale=1,
+               elevation_scale=4,
                elevation_range=[0, 1000],
-               pickable=True,
+               pickable=False,
                extruded=True,
             ),
             pdk.Layer(
