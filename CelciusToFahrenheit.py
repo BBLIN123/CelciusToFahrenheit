@@ -25,7 +25,7 @@ def main():
         initial_view_state=pdk.ViewState(
             latitude=-27.634,
             longitude=152.969,
-            zoom=6,
+            zoom=11,
             pitch=50,
         ),
         layers=[
@@ -34,8 +34,8 @@ def main():
                data=chart_data,
                get_position='[lon, lat]',
                radius=100,
-               elevation_scale=10,
-               elevation_range=[0, 150],
+               elevation_scale=1,
+               elevation_range=[0, 1000],
                pickable=True,
                extruded=True,
             ),
