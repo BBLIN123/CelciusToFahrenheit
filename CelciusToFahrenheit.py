@@ -50,7 +50,7 @@ def main():
                get_position='[lon, lat]',
                radius=100,
                elevation_scale=10,
-               elevation_range=[1000, 3000],
+               elevation_range=［3000],
                pickable=True,
                extruded=True,
             ),
