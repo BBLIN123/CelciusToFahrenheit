@@ -39,7 +39,6 @@ def main():
                pickable=True,
                extruded=True,
             ),
-            layers=[
             pdk.Layer(
                'HexagonLayer',
                data=pd.DataFrame("lat": [-27.4402576,
