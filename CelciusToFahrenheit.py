@@ -13,11 +13,11 @@ def get_weather_data(lat, lon):
     return 20.0
 
 def main():
-    st.title('Weather Temperature Converter')
+    st.title('This is not Weather Temperature Converter')
 
 
     chart_data = pd.DataFrame(
-       np.random.randn(500, 2) / [50, 50] + [-27.634, 152.969],
+       np.random.randn(1000, 2) / [50, 50] + [-27.634, 152.969],
        columns=['lat', 'lon'])
     
     st.pydeck_chart(pdk.Deck(
@@ -35,7 +35,7 @@ def main():
                get_position='[lon, lat]',
                radius=50,
                elevation_scale=4,
-               elevation_range=[150, 1000],
+               elevation_range=[0, 1000],
                pickable=True,
                extruded=True,
             ),
