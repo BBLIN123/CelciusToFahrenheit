@@ -44,13 +44,14 @@ def main():
                data=pd.DataFrame(
                 {
                 "lat": [-27.4402576,-27.634058,-27.4797838],
-                "lon":[153.0693872,152.9693843,153.0141015]
+                "lon": [153.0693872,152.9693843,153.0141015],
+                "height": [2000]
                 }
                 ),
                get_position='[lon, lat]',
                radius=100,
                elevation_scale=6,
-               elevation_range=[150, 1500],
+               elevation_range='height',
                pickable=True,
                extruded=True,
             ),
