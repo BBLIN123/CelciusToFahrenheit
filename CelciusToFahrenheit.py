@@ -24,8 +24,10 @@ def main():
     st.title('This is not Weather Temperature Converter')
     btn_refresh = st.button('Refresh')
     if btn_refresh:
-        #st.button = False
-        st.experimental_rerun()
+        st.write('test')
+        st.button = False
+        st.write('after test')
+        #st.experimental_rerun()
         
 
     chart_data = pd.DataFrame(
