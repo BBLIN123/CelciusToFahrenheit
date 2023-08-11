@@ -23,7 +23,6 @@ def main():
         "lon": [153.0693872, 152.9693843, 153.0141015],
         "lat": [-27.4402576, -27.634058, -27.4797838],
     }
-    manual_data
     chart_data
     st.pydeck_chart(pdk.Deck(
         map_style=None,
