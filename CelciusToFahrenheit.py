@@ -23,7 +23,7 @@ def open_info(event):
 def main():
     st.title('This is not Weather Temperature Converter')
     if st.button('Refresh'):
-        st.button = False
+        #st.button = False
         st.experimental_rerun()
         
 
