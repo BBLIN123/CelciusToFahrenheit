@@ -34,7 +34,7 @@ def main():
                data=chart_data,
                get_position='[lon, lat]',
                radius=50,
-               elevation_scale=4,
+               elevation_scale=2,
                elevation_range=[0,1000],
                pickable=True,
                extruded=True,
@@ -45,13 +45,13 @@ def main():
                 {
                 "lat": [-27.4402576,-27.634058,-27.4797838],
                 "lon": [153.0693872,152.9693843,153.0141015],
-                "height": [10,10,10]
+                "height": [8,8,8]
                 }
                 ),
                get_position='[lon, lat]',
                radius=100,
                elevation_scale='[height]',
-               elevation_range=[1000,1500],
+               elevation_range=[0,1500],
                pickable=True,
                extruded=True,
             ),
