@@ -24,6 +24,8 @@ def main():
         "lat": [-27.4402576, -27.634058, -27.4797838],
     }
     chart_data
+    
+    manual_data
     st.pydeck_chart(pdk.Deck(
         map_style=None,
         initial_view_state=pdk.ViewState(
