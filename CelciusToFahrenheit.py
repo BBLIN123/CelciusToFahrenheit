@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pydeck as pdk
+# import webbrowser
 
 def celsius_to_fahrenheit(celsius):
     return (celsius * 9/5) + 32
@@ -11,10 +12,20 @@ def get_weather_data(lat, lon):
     # You can use any weather API of your choice here to get the weather data.
     # For the sake of this example, I'm simply returning a random temperature.
     return 20.0
+    
+# Define the on_click callback
+def open_info(event):
+    if event["type"] == "click":
+        lon, lat = event["coordinate"]
+        info = df[(df["lon"] == lon) & (df["lat"] == lat)]["info"].values[0]
+        st.write(f"Clicked on: {info}")
 
 def main():
     st.title('This is not Weather Temperature Converter')
-
+    if st.button('Refresh'):
+        st.button = False
+        st.experimental_rerun()
+        
 
     chart_data = pd.DataFrame(
        np.random.randn(500, 2) / [50, 50] + [-27.634, 152.969],
@@ -114,6 +125,7 @@ def main():
                 get_position='[lon, lat]',
                 get_color='[200, 30, 0, 160]',
                 get_radius=25,
+                on_click=open_info
             )
         ],
     ))
