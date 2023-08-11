@@ -22,13 +22,14 @@ def open_info(event):
 
 def main():
     st.title('This is not Weather Temperature Converter')
+    '''
     btn_refresh = st.button('Refresh')
     if btn_refresh:
         st.write('test')
         st.button = False
         st.write('after test')
         #st.experimental_rerun()
-        
+    '''
 
     chart_data = pd.DataFrame(
        np.random.randn(500, 2) / [50, 50] + [-27.634, 152.969],
