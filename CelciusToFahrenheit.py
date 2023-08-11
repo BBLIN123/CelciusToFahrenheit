@@ -92,7 +92,7 @@ def main():
                'HexagonLayer',
                data=manual_data,
                get_position='[lon, lat]',
-               radius=40,
+               radius=50,
                elevation_scale=5,
                elevation_range=[10,200],
                pickable=True,
