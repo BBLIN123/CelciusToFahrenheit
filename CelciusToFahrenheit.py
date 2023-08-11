@@ -17,7 +17,7 @@ def main():
 
 
     chart_data = pd.DataFrame(
-       np.random.randn(200, 2) / [50, 50] + [-27.634, 152.969],
+       np.random.randn(500, 2) / [50, 50] + [-27.634, 152.969],
        columns=['lat', 'lon'])
     
     st.pydeck_chart(pdk.Deck(
