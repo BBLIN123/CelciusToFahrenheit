@@ -34,16 +34,7 @@ def main():
             pitch=50,
         ),
         layers=[
-            pdk.Layer(
-               'HexagonLayer',
-               data=chart_data,
-               get_position='[lon, lat]',
-               radius=50,
-               elevation_scale=6,
-               elevation_range=[1000,1000],
-               pickable=True,
-               extruded=True,
-            ),
+            
             pdk.Layer(
                'HexagonLayer',
                data=manual_data,
