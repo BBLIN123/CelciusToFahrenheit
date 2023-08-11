@@ -19,6 +19,11 @@ def main():
     chart_data = pd.DataFrame(
        np.random.randn(500, 2) / [50, 50] + [-27.634, 152.969],
        columns=['lat', 'lon'])
+    manual_data = {
+        "lon": [153.0693872, 152.9693843, 153.0141015],
+        "lat": [-27.4402576, -27.634058, -27.4797838],
+        "height": [8, 8, 8]
+    }
     
     st.pydeck_chart(pdk.Deck(
         map_style=None,
@@ -41,13 +46,7 @@ def main():
             ),
             pdk.Layer(
                'HexagonLayer',
-               data=pd.DataFrame(
-                {
-                "lat": [-27.4402576,-27.634058,-27.4797838],
-                "lon": [153.0693872,152.9693843,153.0141015],
-                "height": [8,8,8]
-                }
-                ),
+               data=manual_data,
                get_position='[lon, lat]',
                radius=50,
                elevation_scale=[height],
