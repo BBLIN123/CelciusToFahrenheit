@@ -103,7 +103,7 @@ def main():
                 data=manual_data,
                 get_position='[lon, lat]',
                 get_color='[200, 30, 0, 160]',
-                get_radius=25,
+                get_radius=5,
             )
         ],
     ))
