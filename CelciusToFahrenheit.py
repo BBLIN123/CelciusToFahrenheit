@@ -31,16 +31,6 @@ def main():
         layers=[
             pdk.Layer(
                'HexagonLayer',
-               data=chart_data,
-               get_position='[lon, lat]',
-               radius=50,
-               elevation_scale=4,
-               elevation_range=[0,1000],
-               pickable=True,
-               extruded=True,
-            ),
-            pdk.Layer(
-               'HexagonLayer',
                data=pd.DataFrame(
                 {
                 "lat": [-27.4402576,-27.634058,-27.4797838],
