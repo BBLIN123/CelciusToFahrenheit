@@ -94,16 +94,16 @@ def main():
                get_position='[lon, lat]',
                radius=50,
                elevation_scale=8,
-               elevation_range=[1000,1000],
+               elevation_range=[900,1000],
                pickable=True,
                extruded=True,
             ),
             pdk.Layer(
                 'ScatterplotLayer',
-                data=chart_data,
+                data=manual_data,
                 get_position='[lon, lat]',
                 get_color='[200, 30, 0, 160]',
-                get_radius=100,
+                get_radius=25,
             )
         ],
     ))
