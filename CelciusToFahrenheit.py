@@ -46,7 +46,7 @@ def main():
             ),
             pdk.Layer(
                 'ScatterplotLayer',
-                data=chart_data,
+                data=manual_data,
                 get_position='[lon, lat]',
                 get_color='[200, 30, 0, 160]',
                 get_radius=100,
