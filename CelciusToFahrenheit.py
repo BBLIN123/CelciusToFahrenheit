@@ -49,7 +49,7 @@ def main():
                 }
                 ),
                get_position='[lon, lat]',
-               radius=100,
+               radius=50,
                elevation_scale=[height],
                elevation_range=[1500,1500],
                pickable=True,
