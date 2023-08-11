@@ -18,6 +18,7 @@ def open_info(event):
     if event["type"] == "click":
         lon, lat = event["coordinate"]
         info = df[(df["lon"] == lon) & (df["lat"] == lat)]["info"].values[0]
+        st.info(info)
         st.write(f"Clicked on: {info}")
 
 def main():
