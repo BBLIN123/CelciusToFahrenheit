@@ -19,10 +19,20 @@ def main():
     chart_data = pd.DataFrame(
        np.random.randn(500, 2) / [50, 50] + [-27.634, 152.969],
        columns=['lat', 'lon'])
-    manual_data = {
+    manual_data = pd.DataFrame(
+        [
+            [153.0693872, -27.4402576, 8],
+            [152.9693843, -27.634058, 8],
+            [153.0141015, -27.4797838, 8]
+        ],
+        columns = ["lon", "lat", "height"]
+    )
+
+    
+    '''{
         "lon": [153.0693872, 152.9693843, 153.0141015],
         "lat": [-27.4402576, -27.634058, -27.4797838],
-    }
+    }'''
     chart_data
     
     manual_data
