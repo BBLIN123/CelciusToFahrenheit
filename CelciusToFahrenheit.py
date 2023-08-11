@@ -39,7 +39,7 @@ def main():
                data=chart_data,
                get_position='[lon, lat]',
                radius=50,
-               elevation_scale=2,
+               elevation_scale=8,
                elevation_range=[1000,1000],
                pickable=True,
                extruded=True,
