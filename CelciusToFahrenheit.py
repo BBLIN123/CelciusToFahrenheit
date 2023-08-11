@@ -29,7 +29,17 @@ def main():
             pitch=50,
         ),
         layers=[
-        pdk.Layer(
+            pdk.Layer(
+               'HexagonLayer',
+               data=chart_data,
+               get_position='[lon, lat]',
+               radius=50,
+               elevation_scale=2,
+               elevation_range=[1000,1000],
+               pickable=True,
+               extruded=True,
+            ),
+            pdk.Layer(
                'HexagonLayer',
                data=pd.DataFrame(
                 {
@@ -42,16 +52,6 @@ def main():
                radius=100,
                elevation_scale=8,
                elevation_range=[1500,1500],
-               pickable=True,
-               extruded=True,
-            ),
-        pdk.Layer(
-               'HexagonLayer',
-               data=chart_data,
-               get_position='[lon, lat]',
-               radius=50,
-               elevation_scale=2,
-               elevation_range=[1000,1000],
                pickable=True,
                extruded=True,
             ),
