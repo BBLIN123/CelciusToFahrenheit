@@ -112,6 +112,7 @@ def main():
                elevation_range=[100,500],
                pickable=True,
                extruded=True,
+               coverage=1,
             ),
             pdk.Layer(
                'HexagonLayer',
@@ -123,6 +124,7 @@ def main():
                elevation_range=[10,200],
                pickable=True,
                extruded=True,
+               coverage=1,
             ),
             pdk.Layer(
                 'ScatterplotLayer',
@@ -131,6 +133,7 @@ def main():
                 get_elevation='elevations',
                 get_color='[200, 30, 0, 160]',
                 get_radius=25,
+                coverage=1,
                 on_click=open_info
             )
         ],
