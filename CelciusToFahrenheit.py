@@ -106,6 +106,7 @@ def main():
                'HexagonLayer',
                data=chart_data,
                get_position='[lon, lat]',
+               get_elevation='elevations',
                radius=50,
                elevation_scale=6,
                elevation_range=[100,500],
