@@ -33,7 +33,7 @@ def main():
     '''
 
     chart_data = pd.DataFrame(
-       np.random.randn(1, 2) / [50, 50] + [-27.634, 152.969],
+       np.random.randn(500, 2) / [50, 50] + [-27.634, 152.969],
        columns=['lat', 'lon'])
     manual_data = pd.DataFrame(
         [
@@ -117,6 +117,7 @@ def main():
                'HexagonLayer',
                data=manual_data,
                get_position='[lon, lat]',
+               get_elevation='elevations',
                radius=50,
                elevation_scale=5,
                elevation_range=[10,200],
@@ -127,6 +128,7 @@ def main():
                 'ScatterplotLayer',
                 data=manual_data,
                 get_position='[lon, lat]',
+                get_elevation='elevations',
                 get_color='[200, 30, 0, 160]',
                 get_radius=25,
                 on_click=open_info
