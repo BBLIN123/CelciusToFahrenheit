@@ -102,7 +102,7 @@ def main():
             pitch=50,
         ),
         layers=[
-            '''pdk.Layer(
+            pdk.Layer(
                'HexagonLayer',
                data=chart_data,
                get_position='[lon, lat]',
@@ -125,7 +125,7 @@ def main():
                pickable=True,
                extruded=True,
                coverage=1,
-            ),'''
+            ),
             pdk.Layer(
                 'ScatterplotLayer',
                 data=manual_data,
