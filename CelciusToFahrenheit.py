@@ -66,11 +66,11 @@ def main():
                'HexagonLayer',
                data=chart_data,
                get_position='[lon, lat]',
-               elevation=chart_elevations,
+               get_elevation='elevation',
                radius=50,
+               elevation_scale=1,
                
-               
-               pickable=True,
+               pick_able=True,
                extruded=True,
                coverage=1,
             ),
@@ -78,7 +78,7 @@ def main():
                'HexagonLayer',
                data=manual_data,
                get_position='[lon, lat]',
-               get_elevation='manual_elevations',
+               get_elevation='elevation',
                radius=50,
                elevation_scale=5,
                
