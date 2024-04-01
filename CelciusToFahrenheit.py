@@ -83,7 +83,7 @@ def main():
                get_elevationss='elevation',
                radius=50,
                elevation_scale=2,
-               elevation_range=[10,200],
+               
                pickable=True,
                extruded=True,
                coverage=1,
