@@ -70,7 +70,7 @@ def main():
                radius=50,
                elevation_scale=1,
                
-               pick_able=True,
+               pickable=True,
                extruded=True,
                coverage=1,
             ),
