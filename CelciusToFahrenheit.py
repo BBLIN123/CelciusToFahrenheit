@@ -33,7 +33,7 @@ def main():
     '''
 
     chart_data = pd.DataFrame(
-       np.random.randn(500, 2) / [50, 50] + [-27.634, 152.969],
+       np.random.randn(10, 2) / [50, 50] + [-27.634, 152.969],
        columns=['lat', 'lon'])
     manual_data = pd.DataFrame(
         [
@@ -66,7 +66,7 @@ def main():
         layers=[
             pdk.Layer(
                'HexagonLayer',
-               data=manual_data,
+               data=chart_data,
                get_position='[lon, lat]',
                get_elevation='elevations',
                radius=50,
