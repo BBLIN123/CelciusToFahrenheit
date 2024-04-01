@@ -50,6 +50,7 @@ def main():
     )
     
     st.write(chart_data({'elevation'}))
+    st.write(manual_data({'elevation'}))
     
     st.pydeck_chart(pdk.Deck(
         map_style=None,
