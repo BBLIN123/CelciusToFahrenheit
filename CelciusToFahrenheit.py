@@ -53,7 +53,7 @@ def main():
     manual_elevations = manual_data['elevation'].tolist()
     st.write(chart_elevations)
     st.write(manual_elevations)
-    '''
+    
     st.pydeck_chart(pdk.Deck(
         map_style=None,
         initial_view_state=pdk.ViewState(
@@ -211,7 +211,7 @@ def main():
         },
         hide_index=True,
     )
-    '''
+    
 
 if __name__ == '__main__':
     main()
