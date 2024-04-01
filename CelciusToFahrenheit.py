@@ -33,7 +33,7 @@ def main():
     '''
 
     chart_data = pd.DataFrame(
-       np.random.randn(10, 3) / [50, 50, 190] + [-27.634, 152.969, 10],
+       np.random.randn(10, 3) / [50, 50, 1] * [1, 1, 190] + [-27.634, 152.969, 10],
        columns=['lat', 'lon', 'elevation'])
     manual_data = pd.DataFrame(
         [
@@ -50,7 +50,7 @@ def main():
     )
     
     chart_elevations = chart_data['elevation'].tolist()
-    manual_elevations = manual_data['elevation'].tolist()
+    manual_elevations = manual_data['elevation']
     st.write(chart_elevations)
     st.write(manual_elevations)
     '''
