@@ -33,7 +33,7 @@ def main():
     '''
  
     chart_data = pd.DataFrame(
-       np.random.randn(100, 3) / [50, 50, 1] * [1, 1, 30] + [-27.634, 152.969, 105],
+       np.random.randn(100, 3) / [50, 50, 1] * [1, 1, 1.5] + [-27.634, 152.969, 6],
        columns=['lat', 'lon', 'elevation'])
     manual_data = pd.DataFrame(
         [
@@ -50,9 +50,11 @@ def main():
         ],
         columns = ['lon', 'lat', 'elevation']
     )
+    chart_data['elevation'] = chart_data['elevation'].round().astype(int)
+    chart_data = 
     
-    chart_elevations = chart_data['elevation']
     manual_elevations = manual_data['elevation'].tolist()
+    
     
     st.pydeck_chart(pdk.Deck(
         map_style=None,
