@@ -89,7 +89,7 @@ def main():
         ],
     ))
 
-    
+    '''
     # Input Celsius temperature
     celsius_temp = st.number_input('Enter Celsius temperature:', value=0.0)
 
@@ -201,7 +201,7 @@ def main():
         hide_index=True,
     )
     
-    '''pdk.Layer(
+    pdk.Layer(
                'HexagonLayer',
                data=chart_data,
                get_position='[lon, lat]',
