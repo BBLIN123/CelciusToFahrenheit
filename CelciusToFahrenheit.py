@@ -63,23 +63,12 @@ def main():
             pitch=50,
         ),
         layers=[
+            
             pdk.Layer(
                'HexagonLayer',
                data=chart_data,
                get_position='[lon, lat]',
                get_elevation='chart_elevations',
-               radius=50,
-               elevation_scale=6,
-               elevation_range=[100,500],
-               pickable=True,
-               extruded=True,
-               coverage=1,
-            ),
-            pdk.Layer(
-               'HexagonLayer',
-               data=manual_data,
-               get_position='[lon, lat]',
-               get_elevation='manual_elevations',
                radius=50,
                elevation_scale=5,
                elevation_range=[10,200],
@@ -212,6 +201,19 @@ def main():
         hide_index=True,
     )
     
+    '''pdk.Layer(
+               'HexagonLayer',
+               data=chart_data,
+               get_position='[lon, lat]',
+               get_elevation='chart_elevations',
+               radius=50,
+               elevation_scale=6,
+               elevation_range=[100,500],
+               pickable=True,
+               extruded=True,
+               coverage=1,
+            ),
+            '''
 
 if __name__ == '__main__':
     main()
