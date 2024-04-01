@@ -1,4 +1,3 @@
-Part 1
 from datetime import datetime, date, time
 import streamlit as st
 import pandas as pd
@@ -56,13 +55,6 @@ def main():
     manual_data = pd.concat([manual_data.loc[manual_data['elevation'] == height, :].reindex(manual_data.loc[manual_data['elevation'] == height, :].index.repeat(height))
                              for height in manual_data['elevation'].unique()])
 
-    googlemap_data = pd.DataFrame(
-        []
-
-
-
-
-
 st.pydeck_chart(pdk.Deck(
         map_style=None,
         initial_view_state=pdk.ViewState(
@@ -76,21 +68,25 @@ st.pydeck_chart(pdk.Deck(
                'HexagonLayer',
                data=chart_data,
                get_position='[lon, lat]',
+               get_elevation='elevation',
                radius=50,
-               elevation_scale=6,
-               elevation_range=[100,500],
+               elevation_scale=2,
+               elevation_range=[10,200],
                pickable=True,
                extruded=True,
+               coverage=1,
             ),
             pdk.Layer(
                'HexagonLayer',
                data=manual_data,
                get_position='[lon, lat]',
+               get_elevation='elevation',
                radius=50,
-               elevation_scale=5,
+               elevation_scale=3,
                elevation_range=[10,200],
                pickable=True,
                extruded=True,
+               coverage=1,
             ),
             pdk.Layer(
                 'ScatterplotLayer',
