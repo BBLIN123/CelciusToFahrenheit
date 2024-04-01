@@ -46,7 +46,7 @@ def main():
             [152.9777777, -27.634058, 80],
             
         ],
-        columns = ["lon", "lat", "elevation"]
+        columns = ['lon', 'lat', 'elevation']
     )
     
     chart_elevations = chart_data['elevation'].tolist()
