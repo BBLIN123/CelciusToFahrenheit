@@ -49,7 +49,7 @@ def main():
             [152.9777777, -27.634058, 80],
             
         ],
-        columns = ["lon", "lat", "height"]
+        columns = ["lon", "lat", "elevations"]
     )
 
     
@@ -71,7 +71,7 @@ def main():
                'HexagonLayer',
                data=manual_data,
                get_position='[lon, lat]',
-               get_elevation='height',
+               get_elevation='elevations',
                radius=50,
                elevation_scale=6,
                elevation_range=[100,500],
