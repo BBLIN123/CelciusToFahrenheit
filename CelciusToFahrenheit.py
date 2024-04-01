@@ -74,15 +74,17 @@ def main():
                coverage=1,
             ),
             pdk.Layer(
-                'ScatterplotLayer',
-                data=manual_data,
-                get_position='[lon, lat]',
-                get_elevation='manual_elevations',
-                get_color='[200, 30, 0, 160]',
-                get_radius=25,
-                coverage=1,
-                on_click=open_info
-            )
+               'HexagonLayer',
+               data=manual_data,
+               get_position='[lon, lat]',
+               get_elevation='manual_elevations',
+               radius=50,
+               elevation_scale=5,
+               
+               pickable=True,
+               extruded=True,
+               coverage=1,
+            ),
         ],
     ))
 
