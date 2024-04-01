@@ -22,7 +22,7 @@ def open_info(event):
         st.write(f"Clicked on: {info}")
 
 def main():
-    st.title('This iis not Weather Temperature Converter')
+    st.title('This is not Weather Temperature Converter')
     '''
     btn_refresh = st.button('Refresh')
     if btn_refresh:
@@ -70,7 +70,7 @@ def main():
                elevation_scale=5,
                elevation_range=[10,200],
                pickable=True,
-               extruded=True,
+               extruded=False,
                coverage=1,
             ),
             pdk.Layer(
