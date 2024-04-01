@@ -22,7 +22,7 @@ def open_info(event):
         st.write(f"Clicked on: {info}")
 
 def main():
-    st.title('This is not Weather Temperature Converter')
+    st.title('This iiis not Weather Temperature Converter')
     '''
     btn_refresh = st.button('Refresh')
     if btn_refresh:
