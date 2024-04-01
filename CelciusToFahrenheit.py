@@ -33,7 +33,7 @@ def main():
     '''
 
     chart_data = pd.DataFrame(
-       np.random.randn(10, 2) / [50, 50] + [-27.634, 152.969],
+       np.random.randn(50, 2) / [50, 50] + [-27.634, 152.969],
        columns=['lat', 'lon'])
     manual_data = pd.DataFrame(
         [
