@@ -49,7 +49,7 @@ def main():
         columns = ['lon', 'lat', 'elevation']
     )
     
-    chart_elevations = chart_data['elevation'].tolist()
+    chart_elevations = chart_data['elevation']
     manual_elevations = manual_data['elevation'].tolist()
     
     st.pydeck_chart(pdk.Deck(
@@ -66,7 +66,7 @@ def main():
                'HexagonLayer',
                data=chart_data,
                get_position='[lon, lat]',
-               get_elevation=elevation,
+               get_elevation=chart_elevations,
                radius=50,
                
                
