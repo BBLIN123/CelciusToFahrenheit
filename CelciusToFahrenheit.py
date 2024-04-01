@@ -55,7 +55,7 @@ def main():
     manual_data = pd.concat([manual_data.loc[manual_data['elevation'] == height, :].reindex(manual_data.loc[manual_data['elevation'] == height, :].index.repeat(height))
                              for height in manual_data['elevation'].unique()])
 
-st.pydeck_chart(pdk.Deck(
+    st.pydeck_chart(pdk.Deck(
         map_style=None,
         initial_view_state=pdk.ViewState(
             latitude=-27.634,
