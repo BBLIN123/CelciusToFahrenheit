@@ -49,6 +49,7 @@ def main():
         columns = ['lon', 'lat', 'elevation']
     )
     
+    chart_elevations = chart_data['elevation'].tolist()
     manual_elevations = manual_data['elevation'].tolist()
     
     st.pydeck_chart(pdk.Deck(
