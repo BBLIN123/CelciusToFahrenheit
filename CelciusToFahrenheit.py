@@ -31,7 +31,7 @@ def main():
         st.write('after test')
         #st.experimental_rerun()
     '''
-
+ 
     chart_data = pd.DataFrame(
        np.random.randn(100, 2) / [50, 50] + [-27.634, 152.969],
        columns=['lat', 'lon'])
