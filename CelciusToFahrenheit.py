@@ -67,7 +67,7 @@ def main():
                get_position='[lon, lat]',
                get_elevation='chart_elevations',
                radius=50,
-               elevation_scale=5,
+               elevation_scale=2,
                
                pickable=True,
                extruded=True,
