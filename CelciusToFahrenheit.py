@@ -33,7 +33,7 @@ def main():
     '''
 
     chart_data = pd.DataFrame(
-       np.random.randn(10, 3) / [50, 50, 1] * [1, 1, 190] + [-27.634, 152.969, 10],
+       np.random.randn(10, 3) / [50, 50, 1] * [1, 1, 30] + [-27.634, 152.969, 105],
        columns=['lat', 'lon', 'elevation'])
     manual_data = pd.DataFrame(
         [
@@ -50,7 +50,7 @@ def main():
     )
     
     chart_elevations = chart_data['elevation'].tolist()
-    manual_elevations = manual_data['elevation']
+    manual_elevations = manual_data['elevation'].tolist()
     st.write(chart_elevations)
     st.write(manual_elevations)
     '''
@@ -67,7 +67,7 @@ def main():
                'HexagonLayer',
                data=chart_data,
                get_position='[lon, lat]',
-               get_elevation='elevation',
+               get_elevation='chart_elevations',
                radius=50,
                elevation_scale=6,
                elevation_range=[100,500],
@@ -79,7 +79,7 @@ def main():
                'HexagonLayer',
                data=manual_data,
                get_position='[lon, lat]',
-               get_elevation='elevation',
+               get_elevation='manual_elevations',
                radius=50,
                elevation_scale=5,
                elevation_range=[10,200],
@@ -91,7 +91,7 @@ def main():
                 'ScatterplotLayer',
                 data=manual_data,
                 get_position='[lon, lat]',
-                get_elevation='elevation',
+                get_elevation='manual_elevations',
                 get_color='[200, 30, 0, 160]',
                 get_radius=25,
                 coverage=1,
