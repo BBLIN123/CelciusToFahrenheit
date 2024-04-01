@@ -104,7 +104,7 @@ def main():
         layers=[
             pdk.Layer(
                'HexagonLayer',
-               data=chart_data,
+               data=manual_data,
                get_position='[lon, lat]',
                get_elevation='elevations',
                radius=50,
