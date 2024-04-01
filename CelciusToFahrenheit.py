@@ -51,7 +51,8 @@ def main():
         columns = ['lon', 'lat', 'elevation']
     )
     chart_data['elevation'] = chart_data['elevation'].round().astype(int)
-    chart_data = 
+    chart_data = pd.concat([chart_data.loc[chart_data['elevation'] == height, :].reindex(chart_data.loc[chart_data['elevation'] == height, :].index.repeat(height))
+                             for height in chart_data['elevation'].unique()])
     
     manual_elevations = manual_data['elevation'].tolist()
     
