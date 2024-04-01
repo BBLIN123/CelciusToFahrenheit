@@ -49,9 +49,10 @@ def main():
         columns = ["lon", "lat", "elevation"]
     )
     
-    st.write(chart_data({'elevation'}))
-    st.write(manual_data({'elevation'}))
     
+    st.write(manual_data({'elevation'}))
+    st.write(chart_data({'elevation'}))
+    '''
     st.pydeck_chart(pdk.Deck(
         map_style=None,
         initial_view_state=pdk.ViewState(
@@ -209,7 +210,7 @@ def main():
         },
         hide_index=True,
     )
-    
+    '''
 
 if __name__ == '__main__':
     main()
