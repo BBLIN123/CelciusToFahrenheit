@@ -37,16 +37,13 @@ def main():
        columns=['lat', 'lon', 'elevation'])
     manual_data = pd.DataFrame(
         [
-            [153.0693972, -27.4402676, 200],
-            [152.9693743, -27.633058, 80],
-            [152.9693743, -27.633058, 80],
-            [152.9673813, -27.634458, 200],
-            [152.9673813, -27.634458, 200],
+            [153.0693972, -27.4402676, 10],
+            [152.9693743, -27.633058, 2],
+            [152.9673813, -27.634458, 5],
             [153.0161000, -27.4797338, 8],
-            [153.0653879, -27.4402376, 200],
-            [152.9643848, -27.634858, 200],
-            [152.9777777, -27.634058, 80],
-            
+            [153.0653879, -27.4402376, 12],
+            [152.9643848, -27.634858, 5],
+            [152.9777777, -27.634058, 9],
         ],
         columns = ['lon', 'lat', 'elevation']
     )
@@ -55,6 +52,8 @@ def main():
                              for height in chart_data['elevation'].unique()])
     
     manual_elevations = manual_data['elevation'].tolist()
+    manual_data = pd.concat([manual_data.loc[manual_data['elevation'] == height, :].reindex(manual_data.loc[manual_data['elevation'] == height, :].index.repeat(height))
+                             for height in manual_data['elevation'].unique()])
     
     
     st.pydeck_chart(pdk.Deck(
