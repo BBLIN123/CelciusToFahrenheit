@@ -34,7 +34,7 @@ def main():
 
     chart_data = pd.DataFrame(
        np.random.randn(10, 2) / [50, 50] + [-27.634, 152.969],
-       columns=['lat', 'lon', 'elevation'])
+       columns=['lat', 'lon'])
     manual_data = pd.DataFrame(
         [
             [153.0693972, -27.4402676, 200],
