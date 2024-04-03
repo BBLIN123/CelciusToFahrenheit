@@ -113,7 +113,7 @@ def main():
     
     show_temp_diff = 20.0 - celsius_temp
     col1, col2, col3 = st.columns(3)
-    col1.metric("Temperature", str(celsius_temp) + "°C", str(show_temp_diff.round()) + "°C")
+    col1.metric("Temperature", str(celsius_temp) + "°C", str(round(show_temp_diff,1)) + "°C")
     col2.metric("Wind", "9 mph", "-8%")
     col3.metric("Humidity", "86%", "4%")
     
