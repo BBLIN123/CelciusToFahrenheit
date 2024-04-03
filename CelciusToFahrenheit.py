@@ -101,7 +101,7 @@ def main():
 
     
     # Input Celsius temperature
-    celsius_temp = st.number_input('Enter Celsius temperature:', value=20.0, step=0.1)
+    celsius_temp = st.number_input('Enter Celsius temperature:', value=20.0, step=0.1, format="%.1f")
 
     # Convert Celsius to Fahrenheit
     fahrenheit_temp = celsius_to_fahrenheit(celsius_temp)
