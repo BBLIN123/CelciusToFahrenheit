@@ -107,7 +107,7 @@ def main():
     fahrenheit_temp = celsius_to_fahrenheit(celsius_temp)
 
     # Display the result
-    st.write(f'{celsius_temp:.2f}°C is equal to {fahrenheit_temp:.2f}°F')
+    st.write(f'{celsius_temp:.1f}°C is equal to {fahrenheit_temp:.1f}°F')
     
     
     
