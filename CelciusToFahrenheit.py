@@ -101,7 +101,7 @@ def main():
 
     
     # Input Celsius temperature
-    celsius_temp = st.number_input('Enter Celsius temperature:', value=0.0)
+    celsius_temp = st.number_input('Enter Celsius temperature:', value=20.0)
 
     # Convert Celsius to Fahrenheit
     fahrenheit_temp = celsius_to_fahrenheit(celsius_temp)
@@ -111,9 +111,9 @@ def main():
     
     
     
-    
+    show_temp_diff = 20.0 - celsius_temp
     col1, col2, col3 = st.columns(3)
-    col1.metric("Temperature", str(celsius_temp) + "°C", "1.2 °F")
+    col1.metric("Temperature", str(celsius_temp) + "°C", show_temp_diff + "°C")
     col2.metric("Wind", "9 mph", "-8%")
     col3.metric("Humidity", "86%", "4%")
     
