@@ -20,7 +20,20 @@ def open_info(event):
         info = df[(df["lon"] == lon) & (df["lat"] == lat)]["info"].values[0]
         st.info(info)
         st.write(f"Clicked on: {info}")
+   try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.text
+    except requests.exceptions.RequestException as e:
+        st.error(f"Error retrieving website content: {e}")
+        return ""
 
+def search_for_phrase(content, phrase):
+    pattern = re.compile(phrase, re.IGNORECASE)
+    matches = pattern.findall(content)
+    return matches
+    
+    
 def main():
     st.title('This is not Weather Temperature Converter')
     '''
@@ -109,13 +122,33 @@ def main():
     # Display the result
     st.write(f'{celsius_temp:.1f}°C is equal to {fahrenheit_temp:.1f}°F')
     
-    
-    
     show_temp_diff = celsius_temp - 20.0
     col1, col2, col3 = st.columns(3)
     col1.metric("Temperature", str(round(celsius_temp,1)) + "°C", str(round(show_temp_diff,1)) + "°C of current temp: 20.0°C")
     col2.metric("Wind", "9 mph", "-8%")
     col3.metric("Humidity", "86%", "4%")
+    
+    # Search Phrase
+    st.title("Website Content Search")
+
+    url = st.text_input("Enter website URL")
+    search_phrase = st.text_input("Enter search phrase")
+
+    if st.button("Search"):
+        website_content = get_website_content(url)
+        if website_content:
+            matches = search_for_phrase(website_content, search_phrase)
+            if matches:
+                st.success(f"Found {len(matches)} occurrences of '{search_phrase}'")
+                for match in matches:
+                    st.write(match)
+            else:
+                st.warning(f"No occurrences of '{search_phrase}' found")
+
+    
+    
+    
+    
     
     data_df = pd.DataFrame(
         {
