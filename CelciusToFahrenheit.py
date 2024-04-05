@@ -1,8 +1,10 @@
 from datetime import datetime, date, time
 import streamlit as st
 import pandas as pd
-import numpy as np
-import pydeck as pdk
+import numpy as np #num
+import pydeck as pdk #map
+import requests #access website
+import re #Regular Expression
 # import webbrowser
 
 def celsius_to_fahrenheit(celsius):
@@ -20,11 +22,12 @@ def open_info(event):
         info = df[(df["lon"] == lon) & (df["lat"] == lat)]["info"].values[0]
         st.info(info)
         st.write(f"Clicked on: {info}")
-   try:
+   def get_website_content(url):
+      try:
         response = requests.get(url)
         response.raise_for_status()
         return response.text
-    except requests.exceptions.RequestException as e:
+      except requests.exceptions.RequestException as e:
         st.error(f"Error retrieving website content: {e}")
         return ""
 
